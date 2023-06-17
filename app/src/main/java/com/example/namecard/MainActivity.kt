@@ -78,79 +78,81 @@ fun NameCard(
 ) {
     Column(
         modifier = modifier
-            .fillMaxSize()
             .fillMaxWidth()
-            .background(backgroundColor)
-            .padding(bottom = 150.dp),
+            .background(backgroundColor),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally //中央寄せ
     ) {
-        Image(
-            painter = logo,
-            contentDescription = null,
-            modifier = Modifier.size(220.dp)
-        )
-        Text(
-            text = name,
-            fontWeight = FontWeight.Bold,
-            color = Color.White,
-            fontSize = 32.sp,
-            fontFamily = FontFamily.Serif
-
-        )
-        Text(
-            text = title,
-            color = Color.White,
-            fontSize = 24.sp,
-            fontFamily = FontFamily.Serif
-        )
-    }
-
-    Column(
-        modifier = modifier
-            .fillMaxSize()
-            .padding(bottom = 100.dp, start = 60.dp),
-        verticalArrangement = Arrangement.Bottom
-    ) {
-        Row(modifier = modifier) {
-            Image(painter = twitterIcon,
+        Column(
+            modifier = modifier
+                .padding(bottom = 150.dp),
+            horizontalAlignment = Alignment.CenterHorizontally
+        ) {
+            Image(
+                painter = logo,
                 contentDescription = null,
-                modifier = Modifier.size(30.dp)
+                modifier = Modifier.size(220.dp)
             )
-
             Text(
-                modifier = modifier.padding(start = 10.dp),
-                text = twitterId,
+                text = name,
+                fontWeight = FontWeight.Bold,
                 color = Color.White,
-                fontSize = 20.sp
+                fontSize = 32.sp,
+                fontFamily = FontFamily.Serif
+
+            )
+            Text(
+                text = title,
+                color = Color.White,
+                fontSize = 24.sp,
+                fontFamily = FontFamily.Serif
             )
         }
 
-        Row(modifier = modifier.padding(top = 10.dp)) {
-            Image(
-                painter = githubIcon,
-                contentDescription = null,
-                modifier = Modifier.size(30.dp)
-            )
-            Text(
-                modifier = modifier.padding(start = 10.dp),
-                text = githubId,
-                color = Color.White,
-                fontSize = 20.sp
-            )
-        }
-        Row(modifier = modifier.padding(top = 10.dp)) {
-            Image(
-                painter = gmailIcon,
-                contentDescription = null,
-                modifier = Modifier.size(30.dp)
-            )
-            Text(
-                modifier = modifier.padding(start = 10.dp),
-                text = email,
-                color = Color.White,
-                fontSize = 20.sp
-            )
+        Column(
+            verticalArrangement = Arrangement.spacedBy(16.dp)
+        ) {
+            Row() {
+                Image(
+                    painter = twitterIcon,
+                    contentDescription = null,
+                    modifier = Modifier.size(30.dp)
+                )
+
+                Text(
+                    modifier = modifier.padding(start = 10.dp),
+                    text = twitterId,
+                    color = Color.White,
+                    fontSize = 20.sp
+                )
+            }
+
+            Row() {
+                Image(
+                    painter = githubIcon,
+                    contentDescription = null,
+                    modifier = Modifier.size(30.dp)
+                )
+                Text(
+                    modifier = modifier.padding(start = 10.dp),
+                    text = githubId,
+                    color = Color.White,
+                    fontSize = 20.sp
+                )
+            }
+            Row() {
+                Image(
+                    painter = gmailIcon,
+                    contentDescription = null,
+                    modifier = Modifier.size(30.dp)
+                )
+                Text(
+                    modifier = modifier.padding(start = 10.dp),
+                    text = email,
+                    color = Color.White,
+                    fontSize = 20.sp
+                )
+            }
         }
     }
 }
